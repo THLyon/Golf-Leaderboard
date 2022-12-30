@@ -1,20 +1,21 @@
 import React from 'react'; 
 
 
- const Player = ({leaderBoard}) => {
-    const {name, rank, TotalScore} = leaderBoard;
+ const Player = ({leaders}) => {
+     const {Rank, Name, TotalScore} = leaders;
+     console.log(leaders)
     // const [leaderBoard, setLeaderboard] = useState([]);
     // console.log(leaderboard)
-    // useEffect(() => {
-    //     fetch('localhost:3000/gimme/api')
-    //         .then(res => res.json())
-    //         .then(players => setLeaderBoard(players))
-    // }, []);
+    // // useEffect(() => {
+    // //     fetch('localhost:3000/gimme/api')
+    // //         .then(res => res.json())
+    // //         .then(players => setLeaderBoard(players))
+    // // }, []);
 
     return (
-        <div className='player-div' key={rank}>
-           <h1 alt={`player  ${name}`}> {name} </h1>
-           <p> {rank}</p>
+        <div className='player-div' key={Rank}>
+           <h1 alt={`player  ${Name}`} key = {Rank}> {Name} </h1>
+           <p> {Rank}</p>
            <p>{TotalScore}</p>
         </div>
     )
